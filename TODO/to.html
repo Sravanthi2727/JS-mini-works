@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME TO TODO APP</h1>
+    <input type="text" placeholder="Enter Your Tasks here...">
+    <button>Add Task</button>
+    <ul></ul>
+    <script>
+        let inp = document.querySelector("input");
+        let btn = document.querySelector("button");
+        let ul = document.querySelector("ul");
+        btn.addEventListener("click", function(){
+            let v = inp.value;
+            let li = document.createElement("li");
+            let db = document.createElement("button");
+            db.classList.add("del");
+            db.innerText = "X";
+            li.innerText = v;
+            li.appendChild(db);
+            ul.appendChild(li);
+            inp.value = "";
+
+            // db.addEventListener("click", function(){
+            //     let par = this.parentElement;
+            //     par.remove();
+            // });
+        });
+        ul.addEventListener("click", function(event){
+            if(event.target.nodeName = 'BUTTON'){
+                event.target.parentElement.remove();
+            }
+        })
+    </script>
+</body>
+</html>
